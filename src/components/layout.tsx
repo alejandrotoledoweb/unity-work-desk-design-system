@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 import { Poppins } from "next/font/google";
 
-export const poppins = Poppins({
+const poppins = Poppins({
   variable: "--poppins-font",
   weight: ["100", "300", "400", "500", "700", "900"],
   display: "swap",
