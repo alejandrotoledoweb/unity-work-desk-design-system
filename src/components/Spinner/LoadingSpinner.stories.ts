@@ -19,4 +19,4 @@ const meta: Meta<typeof LoadingSpinner> = {
 
 export default meta;
 
-export const Default: StoryObj<typeof LoadingSpinner> = {};
+export const LoadingSpinner_24: StoryObj<typeof LoadingSpinner> = {};
