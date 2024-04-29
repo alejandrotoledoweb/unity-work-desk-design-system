@@ -22,6 +22,7 @@ export default meta;
 
 export const Default: StoryObj<typeof Modal> = {
   args: {
+    title: "This is the title for the modal",
     children: "This is a modal window. You can place any content here.",
     onClose: () => console.log('Modal closed'),
   },

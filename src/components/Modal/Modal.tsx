@@ -1,20 +1,28 @@
 // components/Modal.tsx
 import React from "react";
 import { Button } from "../Button/Button";
+import Text from "../Text/Text";
 
 type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
+  title: React.ReactNode;
   children: React.ReactNode;
 };
 
-export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+export const Modal: React.FC<ModalProps> = ({
+  isOpen,
+  onClose,
+  children,
+  title,
+}) => {
   if (!isOpen) return null;
 
   return (
     <main className="fixed inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center font-sans">
-      <section className="bg-white py-5 px-5 rounded">
-        {children}
+      <section className="bg-white py-5 px-5 rounded text-center gap-y-4 flex flex-col max-w-96">
+        <Text variant="h2">{title}</Text>
+        <Text variant="p">{children}</Text>
 
         <section className="flex justify-center mt-4 gap-x-2">
           <Button
