@@ -1,7 +1,5 @@
 import React from "react";
-
-import { Button } from "../components/Button/Button";
-import "./header.css";
+import { Button } from "../Button/Button";
 
 type User = {
   name: string;
@@ -20,14 +18,15 @@ export const Header = ({
   onLogout,
   onCreateAccount,
 }: HeaderProps) => (
-  <header>
-    <div className="storybook-header">
-      <div>
+  <header className="border-b border-gray-200 py-4 px-5">
+    <div className="flex items-center justify-between">
+      <div className="flex items-center">
         <svg
           width="32"
           height="32"
           viewBox="0 0 32 32"
           xmlns="http://www.w3.org/2000/svg"
+          className="inline-block align-top"
         >
           <g fill="none" fillRule="evenodd">
             <path
@@ -44,26 +43,38 @@ export const Header = ({
             />
           </g>
         </svg>
-        <h1>Acme</h1>
+        <h1 className="font-bold text-lg leading-none ml-2.5 inline-block align-top">
+          UWD
+        </h1>
       </div>
       <div>
         {user ? (
           <>
-            <span className="welcome">
+            <span className="text-gray-800 text-sm mr-2.5 font-sans">
               Welcome, <b>{user.name}</b>!
             </span>
-            <Button size="small" onClick={onLogout} label="Log out" />
+            <Button
+              size="small"
+              onClick={onLogout}
+              label="Log out"
+              type="primary"
+            />
           </>
         ) : (
-          <>
-            <Button size="small" onClick={onLogin} label="Log in" />
+          <section className="flex gap-x-2">
             <Button
-              primary
               size="small"
+              onClick={onLogin}
+              label="Log in"
+              type="primary"
+            />
+            <Button
+              size="small"
+              type="secondary"
               onClick={onCreateAccount}
               label="Sign up"
             />
-          </>
+          </section>
         )}
       </div>
     </div>
