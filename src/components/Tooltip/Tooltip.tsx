@@ -23,14 +23,14 @@ export const Tooltip: React.FC<TooltipProps> = ({
 
   return (
     <div
-      className="relative inline-block underline"
+      className="relative inline-block underline font-sans font-atoll-950"
       onMouseEnter={() => setIsVisible(true)}
       onMouseLeave={() => setIsVisible(false)}
     >
       {children}
       {isVisible && (
         <div
-          className={`absolute ${positionClasses[position]} px-3 py-1.5 text-sm font-sans text-white bg-gray-700 rounded-lg shadow-md z-50`}
+          className={`absolute ${positionClasses[position]} px-3 py-1.5 text-sm font-sans text-white bg-atoll-900 rounded-lg shadow-md z-50`}
         >
           {content}
         </div>

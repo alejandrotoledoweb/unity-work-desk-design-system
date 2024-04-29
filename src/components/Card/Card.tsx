@@ -1,6 +1,7 @@
 // components/StyledCard.tsx
 import React from "react";
 import Image from "next/image";
+import Text from "../Text/Text";
 
 interface StyledCardProps {
   imageUrl: string;
@@ -14,23 +15,27 @@ export const StyledCard: React.FC<StyledCardProps> = ({
   highlightText,
 }) => {
   return (
-    <div className="relative w-full max-w-xs h-96 rounded-2xl overflow-hidden shadow-lg">
-      <div className="relative w-full h-full">
+    <main className="relative w-full max-w-xs h-96 rounded-2xl overflow-hidden shadow-lg">
+      <section className="relative w-full h-full">
         <Image
           src={imageUrl}
           alt="Background"
           layout="fill" // Use the available space, maintain aspect ratio
           objectFit="cover" // Cover the area without distorting aspect ratio
         />
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-atoll-300"></div>
-      <div className="absolute bottom-0 p-6">
-        <div className="text-4xl font-semibold text-atoll-600 drop-shadow-sm tracking-tight leading-none">
+      </section>
+      <section className="absolute inset-0 bg-gradient-to-b from-transparent to-atoll-300"></section>
+      <article className="absolute bottom-0 p-6">
+        <Text
+          variant="h2"
+          className=" font-semibold text-atoll-600 drop-shadow-sm tracking-tight leading-none"
+        >
           {title}
-          <br />
-          <span className="text-atoll-800">{highlightText}</span>
-        </div>
-      </div>
-    </div>
+        </Text>
+        <Text variant="h3" className="text-atoll-800 font-bold">
+          {highlightText}
+        </Text>
+      </article>
+    </main>
   );
 };

@@ -9,7 +9,7 @@ type TextProps = {
 const Text: React.FC<TextProps> = ({ variant = "p", className, children }) => {
   // Default classes for each variant
   const baseClasses = {
-    p: "text-base leading-6",
+    p: "text-base leading-6 ",
     h1: "text-3xl font-medium leading-tight",
     h2: "text-2xl font-medium leading-tight",
     h3: "text-xl font-medium leading-snug",
@@ -17,7 +17,7 @@ const Text: React.FC<TextProps> = ({ variant = "p", className, children }) => {
   };
 
   // Combine base classes with any additional custom classes
-  const combinedClasses = `${baseClasses[variant]} ${className || ""} font-sans`;
+  const combinedClasses = `${baseClasses[variant]} ${className || ""} font-sans text-gray-600`;
 
   return React.createElement(variant, { className: combinedClasses }, children);
 };
