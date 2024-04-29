@@ -1,37 +1,36 @@
-// components/Card.tsx
+// components/StyledCard.tsx
 import React from "react";
 import Image from "next/image";
-import Text from "../Text/Text";
 
-interface CardProps {
+interface StyledCardProps {
+  imageUrl: string;
   title: string;
-  description: string;
-  imageUrl?: string;
-  altText: string;
+  highlightText: string;
 }
 
-export const Card: React.FC<CardProps> = ({
-  title,
-  description,
+export const StyledCard: React.FC<StyledCardProps> = ({
   imageUrl,
-  altText,
+  title,
+  highlightText,
 }) => {
   return (
-    <main className="max-w-sm rounded overflow-hidden shadow-lg bg-atoll-100 hover:bg-atoll-200 transition-colors duration-300 font-sans min-w-60">
-      {imageUrl && (
-        <section className="w-full h-48 relative">
-          <Image
-            src={imageUrl}
-            alt={altText}
-            layout="fill" // Uses CSS to adjust the size and layout of the image.
-            objectFit="cover" // Resizes the image to cover the frame while maintaining aspect ratio.
-          />
-        </section>
-      )}
-      <section className="px-6 py-4">
-        <Text variant="h3">{title}</Text>
-        <Text variant="p">{description}</Text>
-      </section>
-    </main>
+    <div className="relative w-full max-w-xs h-96 rounded-2xl overflow-hidden shadow-lg">
+      <div className="relative w-full h-full">
+        <Image
+          src={imageUrl}
+          alt="Background"
+          layout="fill" // Use the available space, maintain aspect ratio
+          objectFit="cover" // Cover the area without distorting aspect ratio
+        />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-atoll-300"></div>
+      <div className="absolute bottom-0 p-6">
+        <div className="text-4xl font-semibold text-atoll-600 drop-shadow-sm tracking-tight leading-none">
+          {title}
+          <br />
+          <span className="text-atoll-800">{highlightText}</span>
+        </div>
+      </div>
+    </div>
   );
 };

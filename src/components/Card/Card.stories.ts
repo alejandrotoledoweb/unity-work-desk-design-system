@@ -1,39 +1,35 @@
-
-// stories/Card.stories.tsx
+// stories/StyledCard.stories.tsx
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Card } from './Card';
+import { StyledCard } from './Card';
 
-const meta: Meta<typeof Card> = {
-  title: 'Components/Card',
-  component: Card,
+const meta: Meta<typeof StyledCard> = {
+  title: 'Components/Styled Card',
+  component: StyledCard,
   parameters: {
     layout: 'centered',
   },
   argTypes: {
-    title: {
-      control: 'text',
-      defaultValue: 'Card Title',
-    },
-    description: {
-      control: 'text',
-      defaultValue: 'This is a sample description that elaborates on the contents of the card.',
-    },
     imageUrl: {
       control: 'text',
-      defaultValue: 'https://via.placeholder.com/400x200',
+      defaultValue: 'https://images.unsplash.com/photo-1611244419377-b0a760c19719?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFydGlzdHxlbnwwfHwwfHx8MA==',
+    },
+    title: {
+      control: 'text',
+      defaultValue: 'Create',
+    },
+    highlightText: {
+      control: 'text',
+      defaultValue: 'color scales\nin seconds.',
     },
   },
 };
 
 export default meta;
 
-export const CardEx: StoryObj<typeof Card> = {
+export const Default: StoryObj<typeof StyledCard> = {
   args: {
-    title: "Title",
-  description: "Description",
-  imageUrl: "https://via.placeholder.com/400x200",
-  altText: 'alt descript'
-  },
+    imageUrl: 'https://images.unsplash.com/photo-1611244419377-b0a760c19719?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFydGlzdHxlbnwwfHwwfHx8MA==',
+    title: 'Title'
+  }
 };
-
