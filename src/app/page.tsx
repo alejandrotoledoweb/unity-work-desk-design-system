@@ -3,7 +3,7 @@ import { Button } from "../components/Button/Button";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-atoll-100">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-gray-200">
       {/* <Button label="Primary Button" type="primary" size="large" />
       <Button label="Secondary Button" type="secondary" size="large" /> */}
       <Button type="primary" size="medium" label="Primary Button" />
