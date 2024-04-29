@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { Input } from './Input';
 
 const meta: Meta<typeof Input> = {
-  title: 'Example/Input',
+  title: 'Components/Input',
   component: Input,
   parameters: {
     layout: 'centered',
