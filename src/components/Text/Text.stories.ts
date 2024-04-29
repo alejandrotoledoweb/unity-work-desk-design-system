@@ -29,7 +29,7 @@ const meta: Meta<typeof Text> = {
 export default meta;
 
 // Default Text Story
-export const Default: StoryObj<typeof Text> = {
+export const Paragraph: StoryObj<typeof Text> = {
   args: {
     children: 'This is a sample text paragraph',
     variant: 'p',
