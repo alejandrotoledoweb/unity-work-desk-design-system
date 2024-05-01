@@ -24,15 +24,15 @@ export const StyledCard: React.FC<StyledCardProps> = ({
           objectFit="cover" // Cover the area without distorting aspect ratio
         />
       </section>
-      <section className="absolute inset-0 bg-gradient-to-b from-transparent to-atoll-300"></section>
+      <section className="absolute inset-0 bg-gradient-to-b from-transparent to-atoll-700"></section>
       <article className="absolute bottom-0 p-6">
         <Text
-          variant="h2"
-          className=" font-semibold text-atoll-600 drop-shadow-sm tracking-tight leading-none"
+          variant="h1"
+          className=" font-semibold text-atoll-300 drop-shadow-sm tracking-tight leading-none"
         >
           {title}
         </Text>
-        <Text variant="h3" className="text-atoll-800 font-bold">
+        <Text variant="h2" className="text-atoll-200 font-bold">
           {highlightText}
         </Text>
       </article>

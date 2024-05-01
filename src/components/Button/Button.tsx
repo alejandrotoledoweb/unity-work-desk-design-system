@@ -6,7 +6,7 @@ interface ButtonProps {
   size: "small" | "medium" | "large";
   label: string;
   onClick?: () => void;
-  disable?: false;
+  disable?: boolean;
 }
 
 // import { Poppins } from "next/font/google";
@@ -22,6 +22,7 @@ export const Button = ({
   type = "primary",
   size = "medium",
   label,
+  disable,
   ...props
 }: ButtonProps) => {
   const sizeClasses = classNames({
@@ -34,6 +35,8 @@ export const Button = ({
     "bg-atoll-500 text-white border-0 hover:bg-atoll-600": type === "primary",
     "bg-white text-atoll-500 border border-atoll-500 hover:border-atoll-600 hover:text-atoll-600":
       type === "secondary",
+    "bg-atoll-100 text-atoll-400 hover:bg-atoll-100 hover:cursor-not-allowed":
+      disable,
   });
 
   const commonClasses = classNames(
@@ -53,7 +56,7 @@ export const Button = ({
   );
 
   return (
-    <button type="button" className={buttonClass} {...props}>
+    <button type="button" className={buttonClass} disabled={disable} {...props}>
       {label}
     </button>
   );

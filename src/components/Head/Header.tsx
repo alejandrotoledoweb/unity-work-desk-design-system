@@ -18,7 +18,7 @@ export const Header = ({
   onLogout,
   onCreateAccount,
 }: HeaderProps) => (
-  <header className="border-b border-gray-200 py-4 px-5">
+  <header className="border-b border-gray-800 py-4 px-5 w-full mb-2">
     <div className="flex items-center justify-between">
       <div className="flex items-center">
         <svg

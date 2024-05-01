@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 interface TooltipProps {
-  content: string;
+  content: React.ReactNode;
   position?: "top" | "bottom" | "left" | "right";
   children: React.ReactNode;
 }
@@ -29,11 +29,11 @@ export const Tooltip: React.FC<TooltipProps> = ({
     >
       {children}
       {isVisible && (
-        <div
+        <span
           className={`absolute ${positionClasses[position]} px-3 py-1.5 text-sm font-sans text-white bg-atoll-900 rounded-lg shadow-md z-50`}
         >
           {content}
-        </div>
+        </span>
       )}
     </div>
   );

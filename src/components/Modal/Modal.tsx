@@ -19,7 +19,7 @@ export const Modal: React.FC<ModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <main className="fixed inset-0 bg-gray-800 bg-opacity-50 flex flex-col justify-center items-center font-sans">
+    <main className="fixed inset-0 bg-gray-800 bg-opacity-50 flex flex-col justify-center items-center font-sans z-10">
       <section className="bg-white py-5 px-5 rounded text-center gap-y-4 flex flex-col max-w-96">
         <Text variant="h2">{title}</Text>
         <Text variant="p">{children}</Text>

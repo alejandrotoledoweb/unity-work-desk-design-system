@@ -19,7 +19,7 @@ export const Input = ({
   const sizeClasses = classNames({
     "text-sm px-4 py-2.5": size === "small",
     "text-base px-5 py-2.5": size === "medium",
-    "text-lg px-6 py-3": size === "large",
+    "text-lg px-6 py-2.5": size === "large",
   });
 
   const commonClasses = classNames(
