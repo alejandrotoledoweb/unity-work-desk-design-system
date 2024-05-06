@@ -14,7 +14,7 @@ export const PresentationCard: React.FC<PresentationCardProps> = ({
   imageUrl,
 }) => {
   return (
-    <article className="flex flex-col bg-gray-200 w-screen h-screen justify-center items-center gap-16" >
+    <article className="flex flex-col bg-gray-200 w-full h-screen justify-center items-center gap-16" >
       <Image
         src={imageUrl}
         alt="Working desk"

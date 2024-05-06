@@ -5,7 +5,7 @@ const meta: Meta<typeof PresentationCard> = {
   title: 'Components/Presentation Card',
   component: PresentationCard,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
   },
   argTypes: {
     imageUrl: {
