@@ -8,6 +8,7 @@ interface ButtonProps {
   onClick?: () => void;
   disable?: boolean;
   isTextOnlyButton?: boolean;
+  className?: string;
 }
 
 // import { Poppins } from "next/font/google";
@@ -25,6 +26,7 @@ export const Button = ({
   label,
   disable,
   isTextOnlyButton = false,
+  className,
   ...props
 }: ButtonProps) => {
   const sizeClasses = classNames({
@@ -67,13 +69,15 @@ export const Button = ({
     // `${poppins.variable}`,
     commonClasses,
     sizeClasses,
-    typeClasses
+    typeClasses,
+    className
   );
 
   const buttonClassTextOnly = classNames(
     commonClasses,
     sizeClassesTextOnly,
-    typeClassesTextOnly
+    typeClassesTextOnly,
+    className
   );
 
   return (
