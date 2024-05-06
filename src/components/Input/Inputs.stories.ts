@@ -59,3 +59,12 @@ export const Disabled: Story = {
     disabled: true,
   },
 };
+
+// Labeled Input Story
+export const Labeled: Story = {
+  args: {
+    size: 'medium',
+    placeholder: 'Enter text here...',
+    label: 'Label',
+  },
+};

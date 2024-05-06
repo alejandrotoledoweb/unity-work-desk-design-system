@@ -7,6 +7,7 @@ interface InputProps {
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
+  label?: string;
 }
 
 export const Input = ({
@@ -15,6 +16,7 @@ export const Input = ({
   value,
   onChange,
   disabled = false,
+  label,
 }: InputProps) => {
   const sizeClasses = classNames({
     "text-sm px-4 py-2.5": size === "small",
@@ -37,13 +39,16 @@ export const Input = ({
   );
 
   return (
-    <input
-      type="text"
-      className={`${commonClasses} ${sizeClasses}`}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      disabled={disabled}
-    />
+    <>
+      {label ? <label className="font-sans font-normal">{label}</label> : null}
+      <input
+        type="text"
+        className={`${commonClasses} ${sizeClasses}`}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        disabled={disabled}
+      />
+    </>
   );
 };
