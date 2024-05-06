@@ -63,3 +63,35 @@ export const PrimarySmall: Story = {
     label: 'Small Button',
   },
 };
+
+// Text Only Button Primary Story
+export const TextOnlyButtonPrimary: Story = {
+  args: {
+    type: 'primary', // Default type if not specified
+    size: 'medium',
+    label: 'Text Only Button',
+    isTextOnlyButton: true,
+  },
+};
+
+// Text Only Button Secondary Story
+export const TextOnlyButtonSecondary: Story = {
+  args: {
+    type: 'secondary', // Default type if not specified
+    size: 'medium',
+    label: 'Text Only Button',
+    isTextOnlyButton: true,
+  },
+};
+
+// Text Only disabled Button Story
+export const TextOnlyButtonDisabled: Story = {
+  args: {
+    type: 'primary', // Default type if not specified
+    size: 'medium',
+    label: 'Text Only Button',
+    isTextOnlyButton: true,
+    disable: true,
+  },
+};
+
